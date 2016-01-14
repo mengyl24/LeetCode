@@ -7,15 +7,7 @@
 
 package com.algorithms.sort;
 
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-        next = null;
-    }
-}
+import com.algorithms.list.ListNode;
 
 public class SortLinkedList {
     public static ListNode insertionSortList(ListNode head) {
@@ -23,9 +15,9 @@ public class SortLinkedList {
 
         while (head != null) {
             ListNode node = dummy;
-            System.out.println(node.next);
+            //System.out.println(node.next);
             while (node.next != null && node.next.val < head.val) {
-                System.out.println("test");
+                //System.out.println("test");
                 node = node.next;
             }
             ListNode temp = head.next;
