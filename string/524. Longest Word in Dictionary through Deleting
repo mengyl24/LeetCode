@@ -33,17 +33,16 @@ class Solution {
     }
     
     public String findLongestWord2(String s, List<String> d) {
-        List<String> list = new ArrayList<>();
+        
+        Collections.sort(d, (a, b) -> (a.length() != b.length()) ? Integer.compare(b.length(), a.length()) : a.compareTo(b));
         
         for(String t : d) {
             if(isSubsequence(s, t)) {
-                list.add(t);
+                return t;
             }
         }
         
-        Collections.sort(list, (a, b) -> (a.length() != b.length()) ? Integer.compare(b.length(), a.length()) : a.compareTo(b));
-        
-        return list.isEmpty() ? "" : list.get(0);
+        return "";
     }
     
     public String findLongestWord1(String s, List<String> d) {
